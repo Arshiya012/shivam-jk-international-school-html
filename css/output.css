@@ -640,6 +640,10 @@ video {
   left: 0px;
 }
 
+.top-10{
+  top: 2.5rem;
+}
+
 .z-50{
   z-index: 50;
 }
@@ -2186,6 +2190,10 @@ footer .footer-menu-heading a:hover{
 
   .md\:mt-8{
     margin-top: 2rem;
+  }
+
+  .md\:mt-64{
+    margin-top: 16rem;
   }
 
   .md\:h-12{

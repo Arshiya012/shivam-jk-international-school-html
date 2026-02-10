@@ -9,7 +9,6 @@
   <!-- Site Icons -->
   <link rel="shortcut icon" href="images/FAVICON.JPG" />
   <!-- Bootstrap -->
-  <link href="css/bootstrap.css" rel="stylesheet" />
   <link href="css/font-awesome.css" rel="stylesheet" />
   <!-- Pogo Slider -->
   <link rel="stylesheet" href="css/pogo-slider.min.css" />
@@ -36,16 +35,25 @@
   <header class="">
     <div style="background-image: url('images/banner-bg.jpg');" class="bg-cover bg-center bg-no-repeat">
       <div class="container">
-        <div class="flex justify-between items-center mt-3 md:flex-col md:gap-4 sm:gap-3">
-          <img src="images/logo.png" />
-          <nav class="">
-            <ul class="flex items-center gap-8 xl:gap-6 lg:gap-4 md:gap-3 sm:gap-2 text-w-1 text-sm p-10 xl:p-8 lg:p-6 md:p-4 sm:p-3 flex-wrap md:justify-center">
-              <li><a href="#" class="hover:text-p-2">Home</a></li>
-              <li><a href="#" class="hover:text-p-2">About</a></li>
-              <li><a href="#" class="hover:text-p-2">Academics</a></li>
+        <div class="flex justify-between items-center pt-3  lg:justify-between md:gap-4 sm:gap-3">
+        <div class="lg:flex lg:items-center lg:justify-between lg:w-full lg:gap-x-20">
+       <img src="images/logo.png" class="lg:max-w-[120px] md:max-w-[90px]" />
+
+      <!-- MOBILE HAMBURGER -->
+        <button onclick="toggleMenu()" class="hidden lg:block">
+           <i class="fa fa-bars text-w-1 text-md cursor-pointer"></i>
+        </button>
+      </div>
+
+          <nav class="lg:hidden">
+            <ul
+              class="flex items-center gap-8 xl:gap-6 lg:gap-4 md:gap-3 sm:gap-2 text-w-1 text-sm p-10 xl:p-8 lg:p-6 md:p-4 sm:p-3 flex-wrap md:justify-center">
+              <li><a href="#home" class="hover:text-p-2">Home</a></li>
+              <li><a href="#about" class="hover:text-p-2">About</a></li>
+              <li><a href="#academic" class="hover:text-p-2">Academics</a></li>
               <li><a href="#" class="hover:text-p-2">Admissions</a></li>
               <li><a href="#" class="hover:text-p-2">Facilities</a></li>
-              <li><a href="#" class="hover:text-p-2">Gallery</a></li>
+              <li><a href="#gallery" class="hover:text-p-2">Gallery</a></li>
               <li>
                 <a href="#" class="btn-p">Contact Us</a>
               </li>
@@ -53,12 +61,35 @@
           </nav>
         </div>
       </div>
+
+      <!-- MOBILE SIDEBAR -->
+      <div id="mobileMenu" class="fixed top-0 right-0 h-full w-72 bg-s-1 text-white
+           transform translate-x-full transition-transform duration-300 z-50">
+        <!-- Close Button -->
+        <button onclick="toggleMenu()" class="absolute top-4 right-4 text-sm cursor-pointer">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </button>
+
+        <ul class="flex flex-col gap-6 mt-20 px-6 text-sm">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#academic">Academics</a></li>
+          <li><a href="#">Admissions</a></li>
+          <li><a href="#">Facilities</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li>
+            <a href="#" class="block text-center bg-p-2 py-2 rounded">
+              Contact Us
+            </a>
+          </li>
+        </ul>
+      </div>
       <div class="container">
         <div class="flex items-center justify-between md:flex-col md:gap-8 sm:gap-6">
 
           <!-- LEFT CONTENT -->
-          <div class="max-w-2xl">
-            <h2 class="text-w-1 font-medium text-2xl xl:text-xl lg:text-lg md:text-md sm:text-sm">
+          <div class="max-w-2xl md:text-center md:mt-8">
+            <h2 class="text-w-1 font-medium text-2xl xl:text-xl lg:text-lg  ">
               Shivam JK <br />International
               <span class="font-bry text-p-2">school</span>
             </h2>
@@ -80,7 +111,7 @@
               </button>
             </div>
 
-            <p class="font-normal text-sm sm:text-xs text-w-1 pt-10">
+            <p class="font-normal text-sm sm:text-xs text-w-1 pt-10 ">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit,<br>
               sed do eiusmod tempor incididunt ut labore et dolore<br>
               magna aliqua.
@@ -88,7 +119,8 @@
           </div>
 
           <!-- RIGHT SLIDER -->
-          <div class="relative w-[620px] h-[620px] xl:w-[520px] xl:h-[520px] lg:w-[440px] lg:h-[440px] md:w-[360px] md:h-[360px] sm:w-[280px] sm:h-[280px] flex-shrink-0 mb-12 sm:mb-8 md:mt-8">
+          <div
+            class="relative w-[620px] h-[620px] xl:w-[520px] xl:h-[520px] lg:w-[440px] lg:h-[440px] md:w-[360px] md:h-[360px] sm:w-[280px] sm:h-[280px] flex-shrink-0 mb-12 sm:mb-8 md:mt-8">
             <div class="pogoSlider w-full h-full rounded-full overflow-hidden" id="js-main-slider">
 
               <div class="pogoSlider-slide" style="background-image:url(images/banner-img1.png)">
@@ -107,12 +139,13 @@
   </header>
 
   <!-- About Us Section  -->
-  <section class=" my-sec">
+  <section id="about" class=" my-sec">
     <div class="container mx-auto">
       <div class="flex items-center justify-between gap-16 md:flex-col md:gap-8 sm:gap-6">
 
         <!-- LEFT IMAGE PART -->
-        <div class="relative w-[420px] h-[420px] xl:w-[360px] xl:h-[360px] lg:w-[320px] lg:h-[320px] md:w-[280px] md:h-[280px] sm:w-[240px] sm:h-[240px] flex-shrink-0 md:mx-auto">
+        <div
+          class="relative w-[420px] h-[420px] xl:w-[360px] xl:h-[360px] lg:w-[320px] lg:h-[320px] md:w-[280px] md:h-[280px] sm:w-[240px] sm:h-[240px] flex-shrink-0 md:mx-auto">
 
           <!-- Circle Image -->
           <div>
@@ -136,7 +169,7 @@
         </div>
 
         <!-- RIGHT CONTENT -->
-        <div class="max-w-2xl">
+        <div class="max-w-2xl md:text-center">
 
           <span class="text-xs font-semibold text-p-2 uppercase">
             About Our School
@@ -192,7 +225,7 @@
 
 
   <!-- Choose Us Section -->
-  <section style="background-image: url('images/choose-bg.jpg');" class="bg-cover bg-center bg-no-repeat">
+  <section  style="background-image: url('images/choose-bg.jpg');" class="bg-cover bg-center bg-no-repeat">
     <div class="container mx-auto text-center my-sec">
 
       <h6 class="font-semibold text-p-2 uppercase tracking-wide">
@@ -277,14 +310,14 @@
 
 
   <!-- Academic Section  -->
-  <section class="my-sec bg-g-1">
+  <section id="academic" class="my-sec bg-g-1">
     <div class="container mx-auto px-4">
       <div class="text-center">
         <h6 class="font-semibold text-p-2 uppercase tracking-wide">
           Our Programs
         </h6>
 
-        <h2 class="text-lg lg:text-md md:text-sm sm:text-xs font-semibold text-b-1">
+        <h2 class="text-lg lg:text-md font-semibold text-b-1">
           Academic <span class="font-bry text-p-2">Excellence</span>
         </h2>
 
@@ -399,13 +432,13 @@
   </section>
 
   <!-- Gallery Section  -->
-  <section class="my-sec container">
+  <section id="gallery" class="my-sec container">
     <div class="text-center">
       <h6 class="font-semibold text-p-2 uppercase tracking-wide">
         Campus Life
       </h6>
 
-      <h2 class="text-lg lg:text-md md:text-sm sm:text-xs font-semibold text-b-1">
+      <h2 class="text-lg lg:text-md  font-semibold text-b-1">
         Our <span class="font-bry text-p-2">Gallery</span>
       </h2>
 
@@ -438,7 +471,7 @@
           Meet Our Team
         </h6>
 
-        <h2 class="text-lg lg:text-md md:text-sm sm:text-xs font-semibold text-b-1">
+        <h2 class="text-lg lg:text-md font-semibold text-b-1">
           Dedicated <span class="font-bry text-p-2">Faculty</span>
         </h2>
 
@@ -510,7 +543,7 @@
 
   <section style="background-image: url('images/child-jouney-bg.jpg');" class="bg-cover bg-center bg-no-repeat">
     <div class="container mx-auto text-center my-sec">
-      <h2 class="text-xl xl:text-xl lg:text-lg md:text-md sm:text-sm font-semibold text-w-1">
+      <h2 class="text-xl xl:text-xl lg:text-lg md:text-md font-semibold text-w-1">
         Begin Your Child's <span class="font-bry text-p-2">Journey</span>Today
       </h2>
 
@@ -524,7 +557,7 @@
           <i class="fa fa-comments text-md pr-3"></i></i>Enquiry Now
         </a>
         <a href="#" class="btn-brd">
-         <i class="fa fa-phone text-md pr-3" ></i> Contact Us
+          <i class="fa fa-phone text-md pr-3"></i> Contact Us
         </a>
       </div>
 
@@ -631,8 +664,8 @@
     <!-- Bottom Bar -->
     <div class="border-t border-white/20">
       <div class="container">
-        <div class="flex items-center justify-between text-xs py-4">
-          <p class="!mb-0">© 2026 Shivam JK International School. All rights reserved.</p>
+        <div class="flex items-center justify-between text-xs py-4 sm:flex-col sm:text-center">
+          <p class="!mb-0 ">© 2026 Shivam JK International School. All rights reserved.</p>
           <div class="flex gap-4">
             <a href="#" class="hover:underline">Privacy Policy</a>
             <a href="#" class="hover:underline">Terms of Service</a>
@@ -648,6 +681,14 @@
 
   <!-- Js -->
   <!-- <script src="https://code.jquery.com/jquery-3.4.1.js"></script> -->
+
+  <!-- JS -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("mobileMenu");
+      menu.classList.toggle("translate-x-full");
+    }
+  </script>
 
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
